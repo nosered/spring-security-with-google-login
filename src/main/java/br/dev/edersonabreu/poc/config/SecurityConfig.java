@@ -21,13 +21,14 @@ public class SecurityConfig {
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
 		httpSecurity
+			.csrf(csrf -> csrf.disable())
 			.authorizeHttpRequests(auth -> auth
 				.requestMatchers("/login", "/usuario/form", "/usuario/cadastrar").permitAll()
 				.requestMatchers("/h2-console/**").hasRole("ADMIN")
 				.anyRequest().authenticated()
 			)
 			.headers(headers -> headers
-				.frameOptions(frame -> frame.disable()) // Permitir H2 console
+				.frameOptions(frame -> frame.disable())
 			)
 			.formLogin(form -> form
 				.loginPage("/login") // GET

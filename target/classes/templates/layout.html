@@ -39,12 +39,16 @@
                         </a>
                     </li>
                     <li class="nav-item">
-						<form th:action="@{/logout}" method="POST">
-						    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
-						    <button type="submit" class="nav-link">
-						        <i class="nav-icon fas fa-sign-out-alt"></i> Sair
-						    </button>
-						</form>
+                        <a th:href="@{/h2-console}" class="nav-link" target="blank_">
+                            <i class="nav-icon fas fa-database"></i>
+                            <p>H2 Database</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a th:href="@{/logout}" class="nav-link">
+                            <i class="nav-icon fas fa-sign-out-alt"></i>
+                            <p>Sair</p>
+                        </a>
                     </li>
                 </ul>
             </nav>
