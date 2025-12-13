@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <title>Login</title>
+</head>
+<body>
+<main layout:fragment="content">
+    <div class="login-box mt-5">
+        <div class="card card-outline card-primary">
+            <div class="card-header text-center">
+                <h1><b>MyApp</b> Login</h1>
+            </div>
+            <div class="card-body">
+                <form th:action="@{/login}" method="post">
+                    <div class="input-group mb-3">
+                        <input type="text" name="username" class="form-control" placeholder="Usuário">
+                        <div class="input-group-append">
+                            <div class="input-group-text"><span class="fas fa-user"></span></div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input type="password" name="password" class="form-control" placeholder="Senha">
+                        <div class="input-group-append">
+                            <div class="input-group-text"><span class="fas fa-lock"></span></div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Entrar</button>
+                </form>
+                <hr>
+                <div class="text-center">
+                    <a th:href="@{/oauth2/authorization/google}" class="btn btn-danger btn-block">
+                        <i class="fab fa-google"></i> Entrar com Google
+                    </a>
+                </div>
+                <hr>
+                <div class="text-center">
+                    <p>Não tem conta?</p>
+                    <a th:href="@{/usuario/form}" class="btn btn-success btn-block">
+                        <i class="fas fa-user-plus"></i> Cadastre-se
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>
