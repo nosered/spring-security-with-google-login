@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Acesso Negado</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css">
+</head>
+<body class="hold-transition login-page">
+<div class="login-box">
+    <div class="card card-outline card-danger">
+        <div class="card-header text-center">
+            <h1><b>Erro 403</b></h1>
+        </div>
+        <div class="card-body text-center">
+            <p>Você não tem permissão para acessar esta página.</p>
+            <a th:href="@{/}" class="btn btn-primary">Voltar para Home</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

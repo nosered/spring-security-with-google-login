@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Página não encontrada</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/css/adminlte.min.css">
+</head>
+<body class="hold-transition login-page">
+<div class="login-box">
+    <div class="card card-outline card-warning">
+        <div class="card-header text-center">
+            <h1><b>Erro 404</b></h1>
+        </div>
+        <div class="card-body text-center">
+            <p>A página que você procura não existe.</p>
+            <a th:href="@{/}" class="btn btn-primary">Voltar para Home</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

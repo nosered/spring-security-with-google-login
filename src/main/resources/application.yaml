@@ -15,6 +15,9 @@ spring:
     console:
       enabled: true
       path: /h2-console
+      settings:
+        trace: true
+        web-allow-others: true
   security:
     oauth2:
      client:

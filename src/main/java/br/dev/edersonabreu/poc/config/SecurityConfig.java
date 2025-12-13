@@ -23,7 +23,7 @@ public class SecurityConfig {
 		httpSecurity
 			.authorizeHttpRequests(auth -> auth
 				.requestMatchers("/login", "/usuario/form", "/usuario/cadastrar").permitAll()
-				.requestMatchers("/h2-console/**").permitAll()
+				.requestMatchers("/h2-console/**").hasRole("ADMIN")
 				.anyRequest().authenticated()
 			)
 			.headers(headers -> headers
