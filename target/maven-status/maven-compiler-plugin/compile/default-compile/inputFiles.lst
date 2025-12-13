@@ -1,0 +1,15 @@
+C:\Users\ederson\Dev\Git\spring-security-with-google-login\src\main\java\br\dev\edersonabreu\poc\config\JdbiConfig.java
+C:\Users\ederson\Dev\Git\spring-security-with-google-login\src\main\java\br\dev\edersonabreu\poc\config\SecurityConfig.java
+C:\Users\ederson\Dev\Git\spring-security-with-google-login\src\main\java\br\dev\edersonabreu\poc\controller\HomeController.java
+C:\Users\ederson\Dev\Git\spring-security-with-google-login\src\main\java\br\dev\edersonabreu\poc\controller\UsuarioController.java
+C:\Users\ederson\Dev\Git\spring-security-with-google-login\src\main\java\br\dev\edersonabreu\poc\domain\http\CadastroUsuarioRequest.java
+C:\Users\ederson\Dev\Git\spring-security-with-google-login\src\main\java\br\dev\edersonabreu\poc\domain\Permissao.java
+C:\Users\ederson\Dev\Git\spring-security-with-google-login\src\main\java\br\dev\edersonabreu\poc\domain\PermissaoUsuario.java
+C:\Users\ederson\Dev\Git\spring-security-with-google-login\src\main\java\br\dev\edersonabreu\poc\domain\Usuario.java
+C:\Users\ederson\Dev\Git\spring-security-with-google-login\src\main\java\br\dev\edersonabreu\poc\mapper\PermissaoRowMapper.java
+C:\Users\ederson\Dev\Git\spring-security-with-google-login\src\main\java\br\dev\edersonabreu\poc\mapper\PermissaoUsuarioRowReducer.java
+C:\Users\ederson\Dev\Git\spring-security-with-google-login\src\main\java\br\dev\edersonabreu\poc\mapper\UsuarioRowMapper.java
+C:\Users\ederson\Dev\Git\spring-security-with-google-login\src\main\java\br\dev\edersonabreu\poc\PocSecurityWithGoogleApplication.java
+C:\Users\ederson\Dev\Git\spring-security-with-google-login\src\main\java\br\dev\edersonabreu\poc\repository\UsuarioRepository.java
+C:\Users\ederson\Dev\Git\spring-security-with-google-login\src\main\java\br\dev\edersonabreu\poc\service\OAuth2UsuarioService.java
+C:\Users\ederson\Dev\Git\spring-security-with-google-login\src\main\java\br\dev\edersonabreu\poc\service\UsuarioService.java
