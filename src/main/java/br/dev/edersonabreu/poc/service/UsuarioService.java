@@ -51,4 +51,10 @@ public class UsuarioService implements UserDetailsService {
 												.build();
 		usuarioRepository.salvarPermissoes(List.of(permissaoUsuario));
 	}
+	
+	public void alterarSenha(Usuario usuario, String novaSenha) {
+		usuario.setSenha(passwordEncoder.encode(novaSenha));
+		
+		usuarioRepository.alterarSenha(usuario);
+	}
 }

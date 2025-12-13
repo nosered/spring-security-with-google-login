@@ -32,4 +32,7 @@ public interface UsuarioRepository {
 	
 	@SqlBatch
 	public void salvarPermissoes(@BindBean List<PermissaoUsuario> permissaoUsuario);
+	
+	@SqlUpdate
+	public void alterarSenha(@BindBean Usuario usuario);
 }
