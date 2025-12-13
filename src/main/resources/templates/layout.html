@@ -39,10 +39,12 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a th:href="@{/logout}" class="nav-link">
-                            <i class="nav-icon fas fa-door-open"></i>
-                            <p>Sair</p>
-                        </a>
+						<form th:action="@{/logout}" method="POST">
+						    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+						    <button type="submit" class="nav-link">
+						        <i class="nav-icon fas fa-sign-out-alt"></i> Sair
+						    </button>
+						</form>
                     </li>
                 </ul>
             </nav>
