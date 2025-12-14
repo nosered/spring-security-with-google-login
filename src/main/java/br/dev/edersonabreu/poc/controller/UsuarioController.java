@@ -8,9 +8,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.dev.edersonabreu.poc.domain.Usuario;
 import br.dev.edersonabreu.poc.domain.http.CadastroUsuarioRequest;
+import br.dev.edersonabreu.poc.exception.UsuarioJaExisteException;
 import br.dev.edersonabreu.poc.service.UsuarioService;
 
 import lombok.AllArgsConstructor;
@@ -32,13 +34,21 @@ public class UsuarioController {
 	
 	@PostMapping("/cadastrar")
 	public ModelAndView cadastarUsuario(@ModelAttribute CadastroUsuarioRequest cadastroUsuarioRequest, ModelAndView mView) {
-		mView.setViewName("redirect:/");
 		Usuario usuario = new Usuario();
 		usuario.setEmail(cadastroUsuarioRequest.getEmail());
 		usuario.setNome(cadastroUsuarioRequest.getNome());
 		usuario.setSenha(cadastroUsuarioRequest.getSenha());
 		
-		usuarioService.cadastrar(usuario);
+		try {
+			usuarioService.cadastrar(usuario);
+			mView.setViewName("redirect:/");
+		} catch(UsuarioJaExisteException exception) {
+			cadastroUsuarioRequest.setEmail(null);
+			cadastroUsuarioRequest.setSenha(null);
+			mView.addObject("erro", exception.getMessage());
+			mView.addObject("request", cadastroUsuarioRequest);
+			mView.setViewName("usuario-form");
+		}
 		
 		return mView;
 	}
@@ -55,15 +65,18 @@ public class UsuarioController {
     public ModelAndView alterarSenha(@RequestParam String novaSenha,
                                @RequestParam String confirmarSenha,
                                @AuthenticationPrincipal Usuario usuario,
-                               ModelAndView mView) {
+                               ModelAndView mView,
+                               RedirectAttributes redirectAttributes) {
         if(!novaSenha.equals(confirmarSenha)) {
-        	mView.setViewName("redirect:/usuario/perfil?erroSenha");
+        	redirectAttributes.addFlashAttribute("erro", "A senhas devem ser iguais");
+        	mView.setViewName("redirect:/usuario/perfil");
             return mView;
         }
         
         usuarioService.alterarSenha(usuario, novaSenha);
         
-        mView.setViewName("redirect:/usuario/perfil?senhaAlterada");
+        redirectAttributes.addFlashAttribute("sucesso", "Senha alterada com sucesso");
+        mView.setViewName("redirect:/usuario/perfil");
         return mView;
     }
 }

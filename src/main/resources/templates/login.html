@@ -13,6 +13,12 @@
                 <h1><b>MyApp</b> Login</h1>
             </div>
             <div class="card-body">
+            	<div th:if="${param.erro}" class="alert alert-danger" role="alert">
+				    <span>E-mail e/ou senha incorretos</span>
+				</div>
+				<div th:if="${param.logout}" class="alert alert-success" role="alert">
+				    <span>Você saiu com sucesso</span>
+				</div>
                 <form th:action="@{/login}" method="post">
                     <div class="input-group mb-3">
                         <input type="text" name="username" class="form-control" placeholder="Usuário">

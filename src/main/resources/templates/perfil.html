@@ -26,7 +26,12 @@
                     </div>
                 </div>
             </div>
-
+			<div th:if="${erro}" class="alert alert-danger" role="alert">
+			    <span th:text="${erro}"></span>
+			</div>
+			<div th:if="${sucesso}" class="alert alert-success" role="alert">
+			    <span th:text="${sucesso}"></span>
+			</div>
             <div class="card card-secondary mt-3">
                 <div class="card-header">
                     <h3 class="card-title">Alterar Senha</h3>

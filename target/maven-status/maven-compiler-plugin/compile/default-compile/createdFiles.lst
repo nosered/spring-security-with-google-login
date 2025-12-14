@@ -10,6 +10,7 @@ br\dev\edersonabreu\poc\controller\HomeController.class
 br\dev\edersonabreu\poc\mapper\PermissaoRowMapper.class
 br\dev\edersonabreu\poc\domain\http\CadastroUsuarioRequest.class
 br\dev\edersonabreu\poc\domain\Permissao.class
+br\dev\edersonabreu\poc\exception\UsuarioJaExisteException.class
 br\dev\edersonabreu\poc\service\OAuth2UsuarioService.class
 br\dev\edersonabreu\poc\controller\UsuarioController.class
 br\dev\edersonabreu\poc\domain\Permissao$PermissaoBuilder.class

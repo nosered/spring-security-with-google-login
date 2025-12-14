@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import br.dev.edersonabreu.poc.domain.PermissaoUsuario;
 import br.dev.edersonabreu.poc.domain.Usuario;
+import br.dev.edersonabreu.poc.exception.UsuarioJaExisteException;
 import br.dev.edersonabreu.poc.repository.UsuarioRepository;
 
 import lombok.AllArgsConstructor;
@@ -43,8 +44,12 @@ public class UsuarioService implements UserDetailsService {
 	public void cadastrar(Usuario usuario) {
 		usuario.setEmail(usuario.getEmail().toLowerCase());
 		usuario.setSenha(passwordEncoder.encode(usuario.getSenha()));
-		Integer idUsuario = usuarioRepository.salvar(usuario);
 		
+		if(usuarioRepository.existeUsuario(usuario.getEmail().toLowerCase())) {
+			throw new UsuarioJaExisteException();
+		}
+		
+		Integer idUsuario = usuarioRepository.salvar(usuario);
 		PermissaoUsuario permissaoUsuario = PermissaoUsuario.builder()
 												.idUsuario(idUsuario)
 												.idPermissao(2) // ROLE_USER

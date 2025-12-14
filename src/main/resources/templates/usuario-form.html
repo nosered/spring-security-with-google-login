@@ -13,6 +13,9 @@
                 <div class="card-header">
                     <h3 class="card-title">Cadastro de Novo Usuário</h3>
                 </div>
+                <div th:if="${erro}" class="alert alert-danger" role="alert">
+				    <span th:text="${erro}"></span>
+				</div>
                 <form th:action="@{/usuario/cadastrar}" th:object="${request}" method="POST">
                     <div class="card-body">
                         <!-- Nome Completo -->

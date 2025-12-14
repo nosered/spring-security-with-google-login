@@ -26,6 +26,9 @@ public interface UsuarioRepository {
 	@UseRowReducer(value = PermissaoUsuarioRowReducer.class)
 	public Usuario consultar(String email);
 	
+	@SqlQuery
+	public boolean existeUsuario(String email);
+	
 	@SqlUpdate
 	@GetGeneratedKeys
 	public Integer salvar(@BindBean Usuario usuario);

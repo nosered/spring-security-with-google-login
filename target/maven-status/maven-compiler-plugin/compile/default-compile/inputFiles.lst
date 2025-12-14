@@ -6,6 +6,7 @@ C:\Users\ederson\Dev\Git\spring-security-with-google-login\src\main\java\br\dev\
 C:\Users\ederson\Dev\Git\spring-security-with-google-login\src\main\java\br\dev\edersonabreu\poc\domain\Permissao.java
 C:\Users\ederson\Dev\Git\spring-security-with-google-login\src\main\java\br\dev\edersonabreu\poc\domain\PermissaoUsuario.java
 C:\Users\ederson\Dev\Git\spring-security-with-google-login\src\main\java\br\dev\edersonabreu\poc\domain\Usuario.java
+C:\Users\ederson\Dev\Git\spring-security-with-google-login\src\main\java\br\dev\edersonabreu\poc\exception\UsuarioJaExisteException.java
 C:\Users\ederson\Dev\Git\spring-security-with-google-login\src\main\java\br\dev\edersonabreu\poc\mapper\PermissaoRowMapper.java
 C:\Users\ederson\Dev\Git\spring-security-with-google-login\src\main\java\br\dev\edersonabreu\poc\mapper\PermissaoUsuarioRowReducer.java
 C:\Users\ederson\Dev\Git\spring-security-with-google-login\src\main\java\br\dev\edersonabreu\poc\mapper\UsuarioRowMapper.java
